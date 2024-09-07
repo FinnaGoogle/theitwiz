@@ -7,6 +7,7 @@ import CartPage from './components/CartPage';
 import Consult from './components/ConsultPage';
 import ProfilePage from './components/ProfilePage';
 import Footer from './components/Footer';
+import './App.css';
 
 
 function App() {

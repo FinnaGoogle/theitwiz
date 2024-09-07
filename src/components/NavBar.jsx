@@ -1,18 +1,22 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import './style/NavBar.css';  // Link to your CSS file
 
 function NavBar() {
+
   return (
-    <div className='navbar-frame'>
-    <nav className="nav-links">
-      <Link to="/" className="navbar-brand">ITwiz</Link>
-        <Link to="/store" className="nav-link">Store</Link>
-        <Link to="/consult" className="nav-link">Consult</Link>
-        <Link to="/profile" className="nav-link">Profile</Link>
-        <Link to="/cart" className="nav-link">Cart</Link>
-    </nav>
-  </div>
+
+    <div className="navbar-frame bg-blue-600 text-white shadow-lg fixed w-full z-50">
+      <div className="container mx-auto flex justify-between items-center p-4">
+        <Link to="/" className="text-2xl font-bold">ITwiz</Link>
+        <div className="hidden md:flex space-x-6">
+          <Link to="/store" className="nav-link hover:text-gray-300 transition duration-300">Store</Link>
+          <Link to="/consult" className="nav-link hover:text-gray-300 transition duration-300">Consult</Link>
+          <Link to="/profile" className="nav-link hover:text-gray-300 transition duration-300">Profile</Link>
+          <Link to="/cart" className="nav-link hover:text-gray-300 transition duration-300">Cart</Link>
+      </div>
+      </div>
+      </div>
+    
   );
 }
 
