@@ -58,31 +58,38 @@ function StorePage() {
   const dispatch = useDispatch(); // Hook to dispatch actions to Redux store
 
   return (
-    <div className="min-h-screen bg-gray-100 p-8">
+    <div className="min-h-screen py-20">
       {/* Page title */}
-      <h1 className="text-4xl font-bold text-center text-blue-600 mb-12">Our Products</h1>
+      <h1 className="text-4xl font-bold text-center text-grey-600 mb-12">Our Products</h1>
 
       {/* Grid layout to display products */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12 bg-grey-500 ">
         {products.map((product) => (
           <div
             key={product.id} // Unique key for each product
-            className="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300"
+            className="bg-grey-400 opacity-80 p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300"
           >
             {/* Product image */}
             <img
               src={product.imageUrl}
               alt={product.alt}
-              className="w-full h-48 object-cover rounded-md mb-4"
+              className="w-100 h-50  object-cover rounded-md mb-4"
             />
             {/* Product name */}
             <h3 className="text-xl font-semibold text-gray-800 mb-2">{product.name}</h3>
+            {/* Product details*/}
+            <p className="text-lg text-gray-700 mb-4">{product.details.CPU}</p>
+            <p className="text-lg text-gray-700 mb-4">{product.details.GPU}</p>
+            <p className="text-lg text-gray-700 mb-4">{product.details.RAM}</p>
+            <p className="text-lg text-gray-700 mb-4">{product.details.Storage}</p>
+            <p className="text-lg text-gray-700 mb-4">{product.details.Cooling}</p>
+            <p className="text-lg text-gray-700 mb-4">{product.details.PSU}</p>
             {/* Product price */}
             <p className="text-lg text-gray-700 mb-4">R{product.price}</p>
             {/* Add to cart button */}
             <button
-              onClick={() => dispatch(addToCart(product))} // Dispatch the addToCart action with product info
-              className="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600 transition duration-300"
+              onClick={() => dispatch(addToCart(product))} 
+              className="bg-black-500 text-white py-2 px-4 rounded hover:bg-green-600 transition duration-300"
             >
               Add to Cart
             </button>

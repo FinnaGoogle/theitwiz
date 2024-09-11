@@ -17,7 +17,7 @@ const CartPage = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-100 py-10 px-4">
+    <div className="min-h-screen py-20 px-4">
       <h1 className="text-4xl font-bold text-center mb-10">Your Cart</h1>
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">
@@ -29,7 +29,7 @@ const CartPage = () => {
               {cartItems.map((item) => (
                 <div
                   key={item.id} // Use unique key for each item
-                  className="flex items-center bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300"
+                  className="flex items-center bg-grey p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300"
                 >
                   <img
                     src={item.image}
@@ -38,7 +38,7 @@ const CartPage = () => {
                   />
                   <div>
                     <h3 className="text-2xl font-semibold">{item.name}</h3>
-                    <p className="text-lg text-gray-600">R{item.price}</p>
+                    <p className="text-lg text-white-600">R{item.price}</p>
                   </div>
                 </div>
               ))}
@@ -62,7 +62,7 @@ const CartPage = () => {
             <select
               value={shippingMethod} // Controlled component linked to Redux state
               onChange={handleShippingChange} // Handle shipping change
-              className="w-full p-2 border border-gray-300 rounded-lg"
+              className="w-full p-2 border border-darkgrey-600 rounded-lg"
             >
               <option value="standard">Standard Shipping - R70.00</option>
               <option value="express">Express Shipping - R170.00</option>
