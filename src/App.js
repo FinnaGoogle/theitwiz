@@ -1,32 +1,34 @@
-import React from 'react';
-import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
-import Landing from './components/LandingPage';
-import Consult from './components/ConsultPage';
-import Profile from './components/ProfilePage';
-import StorePage from './components/StorePage';
-import NavBar from './components/NavBar';  // Import NavBar component
-import Footer from './components/Footer';  // Import Footer component
-import 'bootstrap/dist/css/bootstrap.min.css';
+import React from "react";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import NavBar from "./components/NavBar";
+import LandingPage from "./components/LandingPage";
+import StorePage from "./components/StorePage";
+import CartPage from "./components/CartPage";
+import Consult from "./components/ConsultPage";
+import ProfilePage from "./components/ProfilePage";
+import Footer from "./components/Footer";
+import "./App.css";
 
 function App() {
-  const [loggedIn, setLoggedIn] = React.useState(false);
-
   return (
-    <Router>
-      <div>
-        <NavBar />  {/* This will always be visible */}
-        <Routes>
-          <Route path="/" element={<Landing />} />
-          <Route path="/store" element={<StorePage />} />
-          <Route path="/consult" element={loggedIn ? <Consult /> : <Navigate to="/profile" />} />
-          <Route 
-            path="/profile" 
-            element={<Profile loggedIn={loggedIn} setLoggedIn={setLoggedIn} />} 
-          />
-        </Routes>
-        <Footer />  {/* This will always be visible */}
-      </div>
-    </Router>
+    <div className=" relative min-h-screen  bg-gradient-to-b from-gray-500 to-slate-50  ">
+      {/* Background Image with Blur */}
+      <div className=" bg-gradient-to-b from-gray-500 to-slate-50 "/>
+
+      {/* Content Layer */}
+      
+        <Router>
+          <NavBar />
+          <Routes>
+            <Route path="/" element={<LandingPage />} />
+            <Route path="/Store" element={<StorePage />} />
+            <Route path="/cart" element={<CartPage />} />
+            <Route path="/consult" element={<Consult />} />
+            <Route path="/Profile" element={<ProfilePage />} />
+          </Routes>
+          <Footer />
+        </Router>
+    </div>
   );
 }
 
